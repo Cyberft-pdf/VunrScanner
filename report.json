@@ -1,0 +1,75 @@
+{
+  "target": "scanme.nmap.org",
+  "timestamp": "2026-06-20T14:28:19.349796",
+  "ports": [
+    {
+      "number": 22,
+      "protocol": "tcp",
+      "state": "open",
+      "service": "SSH",
+      "version": ""
+    },
+    {
+      "number": 80,
+      "protocol": "tcp",
+      "state": "open",
+      "service": "HTTP",
+      "version": ""
+    }
+  ],
+  "web": {
+    "status_code": 200,
+    "server": "Apache/2.4.7 (Ubuntu)",
+    "headers": {
+      "Date": "Sat, 20 Jun 2026 12:28:22 GMT",
+      "Server": "Apache/2.4.7 (Ubuntu)",
+      "Accept-Ranges": "bytes",
+      "Vary": "Accept-Encoding",
+      "Content-Encoding": "gzip",
+      "Content-Length": "2068",
+      "Content-Type": "text/html"
+    },
+    "ssl_valid": false,
+    "ssl_expiry": "",
+    "cookies": [],
+    "redirects": []
+  },
+  "vulns": [
+    {
+      "type": "Missing Security Header",
+      "severity": "HIGH",
+      "description": "Chybí HSTS header — stránka je náchylná na downgrade útoky",
+      "evidence": "Header 'Strict-Transport-Security' nenalezen",
+      "url": ""
+    },
+    {
+      "type": "Missing Security Header",
+      "severity": "MEDIUM",
+      "description": "Chybí CSP header — zvýšené riziko XSS",
+      "evidence": "Header 'Content-Security-Policy' nenalezen",
+      "url": ""
+    },
+    {
+      "type": "Missing Security Header",
+      "severity": "MEDIUM",
+      "description": "Chybí X-Frame-Options — možný clickjacking",
+      "evidence": "Header 'X-Frame-Options' nenalezen",
+      "url": ""
+    },
+    {
+      "type": "Missing Security Header",
+      "severity": "LOW",
+      "description": "Chybí X-Content-Type-Options",
+      "evidence": "Header 'X-Content-Type-Options' nenalezen",
+      "url": ""
+    },
+    {
+      "type": "Missing Security Header",
+      "severity": "LOW",
+      "description": "Chybí Referrer-Policy",
+      "evidence": "Header 'Referrer-Policy' nenalezen",
+      "url": ""
+    }
+  ],
+  "errors": []
+}

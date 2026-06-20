@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Scan Report – scanme.nmap.org</title>
+<style>
+  body { font-family: monospace; background: #0d0d0d; color: #ccc; padding: 2rem; }
+  h1, h2 { color: #00ff88; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 2rem; }
+  th { background: #1a1a2e; color: #00ff88; padding: 8px 12px; text-align: left; }
+  td { padding: 6px 12px; border-bottom: 1px solid #222; }
+  tr:hover { background: #111; }
+  .open { color: #00ff88; }
+  code { background: #111; padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+  .info { background: #1a1a2e; padding: 1rem; border-left: 4px solid #00ff88; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+<h1>Vulnerability Scanner Report</h1>
+<div class="info">
+  <strong>Cíl:</strong> scanme.nmap.org<br>
+  <strong>Čas:</strong> 2026-06-20 14:42:46<br>
+  <strong>Nalezeno zranitelností:</strong> 5<br>
+  <strong>Otevřených portů:</strong> 2
+</div>
+
+<h2>Otevřené porty</h2>
+<table>
+  <tr><th>Port</th><th>Protokol</th><th>Stav</th><th>Služba</th></tr>
+  <tr><td>22</td><td>tcp</td><td class='open'>open</td><td>SSH</td></tr><tr><td>80</td><td>tcp</td><td class='open'>open</td><td>HTTP</td></tr>
+</table>
+
+<h2>Web Info</h2>
+<div class="info">
+  Status: 200 | Server: Apache/2.4.7 (Ubuntu) |
+  SSL: neplatný | Redirecty: 0
+</div>
+
+<h2>Zranitelnosti</h2>
+<table>
+  <tr><th>Závažnost</th><th>Typ</th><th>Popis</th><th>Důkaz</th></tr>
+  <tr><td style='color:#dc3545;font-weight:bold'>HIGH</td><td>Missing Security Header</td><td>Chybí HSTS header — stránka je náchylná na downgrade útoky</td><td><code>Header 'Strict-Transport-Security' nenalezen</code></td></tr><tr><td style='color:#fd7e14;font-weight:bold'>MEDIUM</td><td>Missing Security Header</td><td>Chybí CSP header — zvýšené riziko XSS</td><td><code>Header 'Content-Security-Policy' nenalezen</code></td></tr><tr><td style='color:#fd7e14;font-weight:bold'>MEDIUM</td><td>Missing Security Header</td><td>Chybí X-Frame-Options — možný clickjacking</td><td><code>Header 'X-Frame-Options' nenalezen</code></td></tr><tr><td style='color:#ffc107;font-weight:bold'>LOW</td><td>Missing Security Header</td><td>Chybí X-Content-Type-Options</td><td><code>Header 'X-Content-Type-Options' nenalezen</code></td></tr><tr><td style='color:#ffc107;font-weight:bold'>LOW</td><td>Missing Security Header</td><td>Chybí Referrer-Policy</td><td><code>Header 'Referrer-Policy' nenalezen</code></td></tr>
+</table>
+</body>
+</html>
