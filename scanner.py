@@ -25,6 +25,7 @@ BANNER = r"""
    \_/ |_(_)_||_|____|_|\_|   |___/\___/_/ \_\_|\_|
 """
 
+
 STEP_LABELS = {
     "ports":      "Port Scanner",
     "web":        "Web Analyzer",
